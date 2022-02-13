@@ -35,6 +35,14 @@
      <!-- /.row -->
     </div><!-- /.container-fluid -->
 </div>
+@if (Session::has('message'))
+<div class="col-sm-6" >
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{ Session::get('message') }}
+    </div>
+</div>
+@endif
     <div class="col-sm-12 table-responsive">
         <p style="text-align: center"><strong>View All Posts</strong></p>
         <table class="table table-striped table-hover table-bordered">

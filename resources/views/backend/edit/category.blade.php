@@ -181,9 +181,9 @@
                             
                             <option >{{$maindata->status}}</option>
                             @if($maindata->status == 'off')
-                            <option value="On"></option>
+                            <option>On</option>
                             @else
-                            <option value="Off">off</option>
+                            <option>off</option>
                             @endif
                         </select>
                     </div>

@@ -13,13 +13,23 @@ class frontController extends Controller
     //function to return views
     public function index()
     {       //variable to get setups
-            $setups = DB::table('setups')->first();
+        $setups = DB::table('setups')->first();
             //variable to get categories
-            $cats = DB::table('categories')->where('status','on')->get();
+        $cats = DB::table('categories')->where('status','on')->get();
             //variable to get all home data
-            $home = DB::table('contents')->where('category','home')->first();
+        $home = DB::table('contents')->where('category','home')->first();
             //getting all about details
-           $aboutus = DB::table('contents')->where('category','aboutus')->first();
+        $aboutus = DB::table('contents')->where('category','aboutus')->first();
+           //getting about slug
+        $aboutus->slug = DB::table('categories')->where('title','about us')->value('slug');
+           //getting all services
+        $services = DB::table('services')->where('status','on')->get();
+           //getting about slug
+        $services->slug = DB::table('categories')->where('title','services')->value('slug');
+           //getting all portfolio
+        $portfolio = DB::table('portfolios')->where('status','on')->get();
+           //getting portfolio slug
+        $portfolio->slug = DB::table('categories')->where('title','portfolio')->value('slug');
              
 //returning views
         return view('index',[
@@ -27,7 +37,8 @@ class frontController extends Controller
     'cats' => $cats,
     'home' => $home,
     'aboutus' => $aboutus,
- 
+    'services' => $services,
+    'portfolio' => $portfolio
  ]);
    
     }

@@ -75,28 +75,75 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{url('all-posts')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="far fa-circle nav-icon text-success"></i>
                                         <p>All Posts</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{url('new-post')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="far fa-circle nav-icon text-success"></i>
                                         <p>Add New Post</p>
                                     </a>
                                 </li>
                                
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Widgets
-                                    
-                                </p>
-                            </a>
-                        </li>
+                       <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                               Services
+                                <i class="fas fa-angle-left right"></i>
+                              
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{url('all-services')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon text-success"></i>
+                                    <p>All Services</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('new-service')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon text-success"></i>
+                                    <p>Add New Service</p>
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                               Portfolios
+                                <i class="fas fa-angle-left right"></i>
+                              
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{url('all-services')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon text-success"></i>
+                                    <p>All Portfolios</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('portcats')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon text-success"></i>
+                                    <p>Add New Portfolio</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('portcats')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon text-success"></i>
+                                    <p>Portfolio Categories</p>
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
                         <li class="nav-item">
                             <a href="{{ url('categories') }}" class="nav-link">
                                 <i class="nav-icon far fa-circle text-info"></i>

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CrudController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,3 +41,21 @@ Route::post('addPost', 'App\Http\Controllers\crudController@insertData');
 Route::get('all-posts', 'App\Http\Controllers\adminController@allPosts');
 // route for editing post
 Route::get('editPost/{id}', 'App\Http\Controllers\adminController@editPost');
+//route to update a post
+Route::post('updatePost/{id}', [crudController::class, 'updateData']);
+//route to delete a post
+Route::get('deletePost/{id}', [adminController::class, 'deletePost']);
+//route for getting a service
+Route::get('new-service', [adminController::class, 'newService']);
+//route for inserting services
+Route::post('addService', [crudController::class, 'insertData']);
+//route for getting all services
+Route::get('all-services', [adminController::class, 'allServices']);
+// route for editing Service
+Route::get('editService/{id}', [adminController::class, 'editService']);
+//route to update a Service
+Route::post('updateService/{id}', [crudController::class, 'updateData']);
+//route to delete a Service
+Route::get('deleteService/{id}', [adminController::class, 'deleteService']);
+//route for getting portfolio cartegories
+Route::get('portcats', [adminController::class, 'portcats']);

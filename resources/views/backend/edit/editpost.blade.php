@@ -130,7 +130,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="index3.html" class="nav-link">Add New Post</a>
+                <a href="index3.html" class="nav-link">Update Post</a>
             </li>
         </ul>
         <!-- Right navbar links -->
@@ -162,46 +162,61 @@
     <section class="content col-sm-12">
      
         <!--form to update the contact us section-->
-        <form action="{{ url('addPost') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ url('updatePost') }}/{{$data->conid}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <input type="hidden" name="tbl" value="{{ encrypt('contents') }}">
+            <input type="hidden" name="conid" value="{{$data->conid}}">
           
             <div class="form-group">
                 <label for="">Title</label>
-                <input type="text" name="title" class="form-control">
+                <input type="text" name="title" class="form-control" value="{{$data->title}}">
             </div>
             <div class="form-group">
                 <label>Description</label>
-                 <textarea name="description" rows="10" class="form-control"></textarea>
+                 <textarea name="description" rows="10" class="form-control">
+                    {{$data->title}}
+                 </textarea>
             </div>     
             <div class="form-group">
                 <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"
                         style="display: none;"></p>
                 <p><label for="file" style="cursor: pointer;">Featured Image</label></p>
+               
+                @if($data->image)
+                <p><img id="output" src="{{$data->image}}" /></p>
+                @else
                 <p><img id="output" width="200" /></p>
+                @endif
             </div>
             <div class="form-group">
                 <label >Category</label>
                     <select name="category" class="form-control">
+                        <option>{{$data->category}}</option>
                         @foreach ($cats as $cat)
+                        @if($cat->title != $data->category)
                         <option >{{$cat->title}}</option>
+                        @endif
                         @endforeach
                         <option >home</option>
                     </select>
             </div>
             <div class="form-group">
                 <label for="">Button Link</label>
-                <input type="text" class="form-control" name="link">
+                <input type="text" class="form-control" name="link" value="{{$data->link}}">
             </div>
             <div class="form-group">
                 <label >Status</label>
                     <select name="status" class="form-control">
-                    <option value="on">on</option>
-                    <option value="off">off</option>
+                        <option >{{$data->status}}</option>
+                        @if($data->status == 'off')
+                        <option>On</option>
+                        @else
+                        <option>off</option>
+                        @endif
                     </select>
             </div>
             <div class="form-group">
-                <button class="btn btn-success">Add Post</button>
+                <button class="btn btn-success">Update Post</button>
             </div>
         </form>
     </section>

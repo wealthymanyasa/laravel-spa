@@ -66,20 +66,25 @@
     </section>
     <!--Hero_Section-->
 
-    <section id="aboutus">
+    <section id="{{$aboutus->slug}}">
         <!--Aboutus-->
         <div class="inner_wrapper">
             <div class="container">
                 <h2>ABOUT US</h2>
                 <div class="inner_section">
                     <div class="row">
-                        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right"><img src="{{url('uploads/contents')}}/{{$aboutus->image}}" class="img-circle delay-03s animated wow zoomIn" alt=""></div>
+                        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
+                            <img src="{{url('uploads/contents')}}/{{$aboutus->image}}" 
+                            class="img-circle delay-03s animated wow zoomIn" alt="">
+                        </div>
                         <div class=" col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
                             <div class=" delay-01s animated fadeInDown wow animated">
                                 <h3>{{$aboutus->title}}...</h3><br />
                                 <p>{{$aboutus->description}}</p> <br />
                             </div>
-                            <div class="work_bottom"> <span>Want to know more..</span> <a href="#contactus" class="contact_btn">Contact Us</a> </div>
+                            <div class="work_bottom"> <span>Want to know more..</span>
+                                 <a href="#contactus" class="contact_btn">Contact Us</a> 
+                                </div>
                         </div>
 
                     </div>
@@ -93,66 +98,32 @@
 
 
     <!--Service-->
-    <section id="services">
+    <section id="{{$services->slug}}">
         <div class="container">
             <h2 >Services</h2>
             <div class="service_wrapper">
                 <div class="row">
-                    <div class="col-lg-4">
+                    @foreach ($services as $service)
+                    <div class="col-lg-3 ">
                         <div class="service_block">
-                            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-android"></i></span> </div>
-                            <h3 class="animated fadeInUp wow">Android</h3>
-                            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-{{$service->icon}}"></i></span> </div>
+                            <h3 class="animated fadeInUp wow">{{$service->title}}</h3>
+                            <p class="animated fadeInDown wow">{!!$service->description!!}</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 borderLeft">
-                        <div class="service_block">
-                            <div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><i class="fa fa-apple"></i></span> </div>
-                            <h3 class="animated fadeInUp wow">Apple IOS</h3>
-                            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 borderLeft">
-                        <div class="service_block">
-                            <div class="service_icon icon3  delay-03s animated wow zoomIn"> <span><i class="fa fa-html5"></i></span> </div>
-                            <h3 class="animated fadeInUp wow">Design</h3>
-                            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row borderTop">
-                    <div class="col-lg-4 mrgTop">
-                        <div class="service_block">
-                            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-dropbox"></i></span> </div>
-                            <h3 class="animated fadeInUp wow">Concept</h3>
-                            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 borderLeft mrgTop">
-                        <div class="service_block">
-                            <div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><i class="fa fa-slack"></i></span> </div>
-                            <h3 class="animated fadeInUp wow">User Research</h3>
-                            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 borderLeft mrgTop">
-                        <div class="service_block">
-                            <div class="service_icon icon3  delay-03s animated wow zoomIn"> <span><i class="fa fa-users"></i></span> </div>
-                            <h3 class="animated fadeInUp wow">User Experience</h3>
-                            <p class="animated fadeInDown wow">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                        </div>
-                    </div>
-                </div>
+                   
+                    @endforeach
+                  
+                  </div>
             </div>
-        </div>
     </section>
-    <!--Service-->
+    <!--Service section eds here-->
 
 
 
 
     <!-- Portfolio -->
-    <section id="portfolio" class="content">
+    <section id="{{$portfolio->slug}}" class="content">
 
         <!-- Container -->
         <div class="container portfolio_title">
@@ -447,6 +418,11 @@
     <script type="text/javascript" src="js/wow.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
 
+    <style>
+        .service_block{
+            margin-bottom:30px;
+                    }
+  </style>
 </body>
 
 </html>

@@ -66,6 +66,23 @@ public function editPost($id){
     $data = DB::table('contents')->where('conid',$id)->first();
     return view('backend.edit.editpost',['data'=>$data, 'cats'=>$cats]);
 }
+  //function to delete post
+  public function deletePost($id){
+    // delete post
+   $data = DB::table('contents')->where('conid',$id)->delete();
+    //redirect user back with success msg 
+   return redirect()->back()->with('message','Data Deleted successfully.');
+}
+   //function to create a new post 
+   public function newService(){
+    return view('backend.insert.service');
+}
+ //function that returns the category view
+ public function portcats(){
+    //get all categories
+     $data = DB::table('portcats')->get();
+    return view ('backend.insert.portfolio-category',['data'=> $data]);
+}
 
 //ADMIN controller ends here//ADMIN controller ends here//ADMIN controller ends here//ADMIN controller ends here
 }
