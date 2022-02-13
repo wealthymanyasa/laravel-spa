@@ -148,7 +148,7 @@ p {
 }
 
 .navStyle ul li:first-child {
-	/*margin:0px;*/;
+	/*margin:0px;*/
 }
 
 .navStyle ul li:last-child {
@@ -169,29 +169,29 @@ p {
 }
 
 .navStyle ul li a:hover {
-    color: #df0031;
+    color: #006aff;
 }
 
 .navStyle > li > a:hover, .nav > li > a:focus {
     text-decoration: none;
-    color: #df0031;
+    color:#006aff;
     background-color: transparent;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    color: #df0031;
+    color: #006aff;
     background-color: transparent;
 }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    color: #df0031;
+    color: #006aff;
     background-color: transparent;
 }
 
 .navStyle > li.active > a,
 .navStyle > li.active > a:hover {
     text-decoration: none;
-    color: #df0031;
+    color: #006aff;
     background-color: transparent;
 }
 
@@ -211,7 +211,7 @@ p {
 ---------------------------------*/
 
 .top_cont_outer {
-    background: #df0031;
+    background: #ff6600;
     position: relative;
 }
 
@@ -285,7 +285,7 @@ a.read_more2 {
 
 a.read_more2:hover {
     background: #fff;
-    color: #df0031;
+    color: #ff6600;
     border: 1px solid #fff;
 }
 
@@ -319,7 +319,7 @@ a.read_more2:hover {
 }
 
 .service_icon {
-    border: 2px solid #df0031;
+    border: 2px solid #ff6600;
     border-radius: 50%;
     width: 90px;
     height: 90px;
@@ -327,11 +327,11 @@ a.read_more2:hover {
 }
 
 .service_icon.icon2 {
-    border: 2px solid #df0031;
+    border: 2px solid #ff6600;
 }
 
 .service_icon.icon3 {
-    border: 2px solid #df0031;
+    border: 2px solid #ff6600;
 }
 
 .service_icon span {
@@ -343,7 +343,7 @@ a.read_more2:hover {
 }
 
 .service_icon i {
-    color: #df0031;
+    color: #ff6600;
     font-size: 40px;
     margin-top: 0;
     position: relative;
@@ -401,7 +401,7 @@ a.read_more2:hover {
 }
 
 .service-list-col1 i {
-    display:;
+    display:#006aff;
     color: #888;
     font-size: 19px;
     font-style: normal;
@@ -436,18 +436,18 @@ a.contact_btn {
     text-align: center;
     line-height: 49px;
     font-size: 16px;
-    color: #df0031;
+    color: #ff6600;
     border-radius: 3px;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
-    border: 2px solid #df0031;
+    border: 2px solid #ff6600;
     transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
 }
 
 a.contact_btn:hover {
-    background: #df0031;
+    background: #ff6600;
     color: #fff;
 }
 
@@ -492,7 +492,7 @@ a.contact_btn:hover {
 }
 
 .Portfolio-nav li a:hover {
-    background: #df0031;
+    background: #ff6600;
     color: #fff;
     text-decoration: none;
 }
@@ -522,7 +522,7 @@ a.contact_btn:hover {
 }
 
 .Portfolio-nav li a.current {
-    background: #df0031;
+    background: #ff6600;
     color: #fff;
     text-decoration: none;
 }
@@ -612,7 +612,7 @@ img {
 
 
 .client_logos {
-    background: #df0031;
+    background: #ff6600;
     padding: 60px 0;
     margin-top: 60px;
 }
@@ -692,7 +692,7 @@ img {
     display: block;
     width: 100%;
     height: 100%;
-    border-bottom: 4px solid #df0031;
+    border-bottom: 4px solid #ff6600;
 }
 
 .team_box:hover .team_box_shadow {
@@ -756,7 +756,7 @@ img {
 }
 
 .team_box ul li a.fa-pinterest:hover {
-    color: #cb2026;
+    color: #ff6622;
 }
 
 .team_box ul li a.fa-google-plus:hover {
@@ -796,7 +796,7 @@ img {
 }
 
 .contact_block_icon.icon2 {
-    border-color: #df0031;
+    border-color: #ff6600;
 }
 
 .contact_block_icon.icon3 {
@@ -813,11 +813,11 @@ img {
 }
 
 .contact_block_icon.icon2 {
-    border-color: #df0031;
+    border-color: #ff6600;
 }
 
 .contact_block_icon.icon2 span {
-    background: #df0031;
+    background: #ff6600;
 }
 
 .contact_block_icon.icon3 {
@@ -955,7 +955,7 @@ img {
     width: 175px;
     height: 50px;
     letter-spacing: 0px;
-    background: #df0031;
+    background: #ff6600;
     border-radius: 3px;
     color: #ffffff;
     font-size: 16px;
@@ -993,7 +993,7 @@ img {
 
 .footer_bottom span a {
     display: inline-block;
-    color: #df0031;
+    color: #ff6600;
     font-size: 16px;
     transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -1113,9 +1113,9 @@ img {
 
 #filters ul li a:hover h5, #filters ul li a.active h5 {
     background: #fff;
-    color: #df0031;
+    color: #ff6600;
     text-decoration: none;
-    border: #df0031 solid 1px;
+    border: #ff6600 solid 1px;
 }
 
 .section-title h2 {
@@ -1206,7 +1206,7 @@ img {
 }
 
 .item_overlay:hover {
-    background: rgba(223, 0, 49, 0.7);
+    background: rgba(0, 86, 223, 0.787);
 }
 
 .item_info {
@@ -1558,7 +1558,6 @@ div.mc-image {
     bottom: 40px;
     padding: 10px 20px;
     text-indent: 0px;
-    moz-border-radius: 0px;
     -webkit-border-radius: 0px;
     border-radius: 0px;
     z-index: 1000;
@@ -1662,7 +1661,7 @@ margin: 0 18px;
 .page_section.team{
 padding: 40px 0;
 }
-, #clients {
+ #clients {
 padding: 40px 0;
 }
 .client_logos ul li {
@@ -1684,7 +1683,7 @@ font-size: 30px;
 padding: 60px 0 50px;
 } 
 .navbar-inverse .navbar-toggle .icon-bar{
-background:#df0031;
+background:#ff6600;
 }
 .navbar-inverse .navbar-toggle {
 border-color: transparent;
@@ -1708,9 +1707,8 @@ margin: 0px;
 color: #222;
 background: #F9F9F9;
 }
-} 
 @media (max-width: 480px){ 
 .team_area {
 width: 99%;
 }
-}
+}}
