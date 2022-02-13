@@ -36,6 +36,5 @@ Route::get('new-post', 'App\Http\Controllers\adminController@newPost');
 Route::post('addPost', 'App\Http\Controllers\crudController@insertData');
 // gettig posts route
 Route::get('all-posts', 'App\Http\Controllers\adminController@allPosts');
-// 
-
-
+// route for editing post
+Route::get('editPost/{id}', 'App\Http\Controllers\adminController@editPost');

@@ -59,6 +59,13 @@ public function allPosts(){
     return view('backend.display.posts',['data'=>$data]);
 
 }
+//function to edit posts ie home and about us sections
+public function editPost($id){
+    $cats = DB::table('categories')->where('status','on')->get();
+
+    $data = DB::table('contents')->where('conid',$id)->first();
+    return view('backend.edit.editpost',['data'=>$data, 'cats'=>$cats]);
+}
 
 //ADMIN controller ends here//ADMIN controller ends here//ADMIN controller ends here//ADMIN controller ends here
 }

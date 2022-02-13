@@ -63,8 +63,12 @@
                         @foreach ($cats as $cat)
                         <option >{{$cat->title}}</option>
                         @endforeach
-                   
+                        <option >home</option>
                     </select>
+            </div>
+            <div class="form-group">
+                <label for="">Button Link</label>
+                <input type="text" class="form-control" name="link">
             </div>
             <div class="form-group">
                 <label >Status</label>
