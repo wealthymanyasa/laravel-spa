@@ -51,9 +51,9 @@
                     <th>SN</th>
                     <th>Title</th>
                     <th>Featured Image</th>
-                <th>Category</th>
-                <th>Status</th>
-                <th>Action</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>

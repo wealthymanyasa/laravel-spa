@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class portcat extends Model
+class team extends Model
 {
     use HasFactory;
 
-    protected $table = 'portcats';
-    protected $primaryKey = 'pcid';
+    protected $table = 'teams';
+    protected $primaryKey = 'tid';
+
 }

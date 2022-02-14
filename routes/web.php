@@ -59,3 +59,52 @@ Route::post('updateService/{id}', [crudController::class, 'updateData']);
 Route::get('deleteService/{id}', [adminController::class, 'deleteService']);
 //route for getting portfolio cartegories
 Route::get('portcats', [adminController::class, 'portcats']);
+//route for inserting portfolio cartegories
+Route::post('addPc', [crudController::class, 'insertData']);
+//route for getting a portfolio
+Route::get('new-portfolio', [adminController::class, 'newPortfolio']);
+//route for inserting portfolios
+Route::post('addPortfolio', [crudController::class, 'insertData']);
+//route for getting clients
+Route::get('clients', [adminController::class, 'clients']);
+//route for inserting clients
+Route::post('addClient', [crudController::class, 'insertData']);
+//route to delete a client
+Route::get('deleteclient/{id}', [adminController::class, 'deleteClient']);
+
+
+
+// <!--/Portfolio Filters -->
+// @foreach($portfolio as $port)
+//          <!-- Portfolio Item -->
+//  <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(1011px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;"
+//   class="portfolio-item one-four {{$port->class}} android isotope-item">
+//      <div class="portfolio_img"> 
+//          <img src="{{url('public/portfolios')}}/{{$port->image}}"
+//           > 
+//      </div>
+//      <div class="item_overlay">
+//          <div class="item_info">
+//              <h4 class="project_name">{{$port->title}}</h4>
+//          </div>
+//      </div>
+//  </div>
+//  <!--/Portfolio Item -->
+//  @endforeach
+
+// </div>
+// <!--/Portfolio Wrapper -->
+
+// <!--/Portfolio Filters -->
+
+// <div class="portfolio_btm"></div>
+
+
+// <div id="project_container">
+// <div class="clear"></div>
+// <div id="project_data"></div>
+// </div>
+
+
+// </section>
+// <!--/Portfolio -->

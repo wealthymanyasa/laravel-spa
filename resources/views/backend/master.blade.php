@@ -124,13 +124,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{url('all-services')}}" class="nav-link">
+                                <a href="{{url('all-portfolio')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon text-success"></i>
                                     <p>All Portfolios</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{url('portcats')}}" class="nav-link">
+                                <a href="{{url('new-portfolio')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon text-success"></i>
                                     <p>Add New Portfolio</p>
                                 </a>
@@ -151,12 +151,18 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ url('clients') }}" class="nav-link">
+                                <i class="nav-icon far fa-circle text-info"></i>
+                                <p>Clients</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ url('setups') }}" class="nav-link">
                                 <i class="nav-icon far fa-circle text-info"></i>
                                 <p>Website Settings</p>
                             </a>
                         </li>
-                    </ul>
+                    </ul>  
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>

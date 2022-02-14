@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class portcat extends Model
+class client extends Model
 {
     use HasFactory;
 
-    protected $table = 'portcats';
-    protected $primaryKey = 'pcid';
+    protected $table = 'clients';
+    protected $primaryKey = 'clid';
 }

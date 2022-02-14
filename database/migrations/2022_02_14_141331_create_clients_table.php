@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePortcatsTable extends Migration
+class CreateClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreatePortcatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('portcats', function (Blueprint $table) {
-
-            $table->increments('pcid');
-            $table->string('title');
-            $table->string('slug');
+        Schema::create('clients', function (Blueprint $table) {
+            $table->increments('clid');
+            $table->string('image');
+            $table->string('link')->nullable();
             $table->string('status');
             $table->timestamps();
-
         });
     }
 
@@ -31,6 +29,6 @@ class CreatePortcatsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('portcats');
+        Schema::dropIfExists('clients');
     }
 }

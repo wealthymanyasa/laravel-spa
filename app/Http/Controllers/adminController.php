@@ -72,17 +72,42 @@ public function editPost($id){
    $data = DB::table('contents')->where('conid',$id)->delete();
     //redirect user back with success msg 
    return redirect()->back()->with('message','Data Deleted successfully.');
+
+}
+
+//function to retrieve all posts from the db
+public function allServices(){
+    $data = DB::table('services')->get();
+    return view('backend.display.posts',['data'=>$data]);
+
 }
    //function to create a new post 
    public function newService(){
     return view('backend.insert.service');
 }
- //function that returns the category view
+ //function that gets data from portfolio categories table->portcats and returns the category view
  public function portcats(){
     //get all categories
      $data = DB::table('portcats')->get();
     return view ('backend.insert.portfolio-category',['data'=> $data]);
 }
+  //function to create a new portfolio 
+  public function newPortfolio(){
+      $cats = DB::table('portcats')->where('status','on')->get();
+    return view('backend.insert.portfolio', ['cats'=>$cats]);
+}
+ //function to create a new client 
+ public function clients(){
+    $data = DB::table('clients')->get();
+  return view('backend.insert.clients', ['data'=>$data]);
+}
+//function to delete client
+public function deleteClient($id){
+    // delete post
+   $data = DB::table('clients')->where('clid',$id)->delete();
+    //redirect user back with success msg 
+   return redirect()->back()->with('message','Data Deleted successfully.');
 
-//ADMIN controller ends here//ADMIN controller ends here//ADMIN controller ends here//ADMIN controller ends here
+}
+//ADMIN controller ends here/////////////////////////////
 }

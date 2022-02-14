@@ -74,22 +74,28 @@
                </tr>
            </thead>
            <tbody>
+               @if(count($data) != 0)
                @foreach ($data as $key=>$category)
                <tr>
                 <td>{{++$key}}</td>
                 <td>{{$category->title}}</td>
                 <td>{{$category->status}}</td>
                 <td>
-                    <a href="{{url('editpc')}}/{{$category->cid}}" class="btn btn-sm btn-success">
+                    <a href="{{url('editpc')}}/{{$category->pcid}}" class="btn btn-sm btn-success">
                         <i class="fa fa-edit"></i>
                     </a>
-                    <a href="{{url('deletepc')}}/{{$category->cid}}" class="btn btn-sm btn-danger">
+                    <a href="{{url('deletepc')}}/{{$category->pcid}}" class="btn btn-sm btn-danger">
                         <i class="fa fa-trash"></i>
                     </a>
                    
                 </td>
                </tr>
                @endforeach
+               @else
+               <tr><td colspan="4" class="alert-warning">No Portfolio Categories Found!!
+                   </td>
+               </tr>
+               @endif
               
            </tbody>
        </table>
