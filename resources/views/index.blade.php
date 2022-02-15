@@ -1,213 +1,152 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, maximum-scale=1">
-    <title>PropertyBook</title>
-    <link rel="icon" href="{{url('uploads/setups')}}/{{$setups->image}}" type="image/png">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="css/animate.css" rel="stylesheet" type="text/css">
 
- 
+    <title>codeStars</title>
 </head>
 
 <body>
 
-    <!--Header_section-->
-    <header id="header_wrapper">
+    <nav class="navbar">
         <div class="container">
-            <div class="header_box">
-                <div class="logo" style="max-width: 200px"><a href="#"><img src="{{url('uploads/setups')}}/{{$setups->image}}" alt="logo"></a></div>
-                <nav class="navbar navbar-inverse" role="navigation">
-                    <div class="navbar-header">
-                        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                    </div>
-                    <div id="main-nav" class="collapse navbar-collapse navStyle">
-                        <ul class="nav navbar-nav" id="mainNav">
-                            <li class="active"><a href="#hero_section" class="scroll-link">Home</a></li>
-                            @foreach ($cats as $cat)
-                            <li class="text-uppercase"><a href="#{{$cat->slug}}" class="scroll-link">{{$cat->title}}</a></li>
-                            @endforeach
-                            <li class="text-uppercase"><a href="#contact" class="scroll-link">contact us</a></li>
-
-                        </ul>
-                    </div>
-                </nav>
+            <div class="logo imgStyle">
+                <!--outputing the image from setups database table stored in public/uploads/setups-->
+                <a href="#home"><img src="{{ url('uploads/setups') }}/{{ $setups->image }}" alt="logo"></a>
             </div>
-        </div>
-    </header>
-    <!--Header_section-->
-
-    <!--Hero_Section-->
-    <section id="hero_section" class="top_cont_outer">
-        <div class="hero_wrapper">
-            <div class="container">
-                <div class="hero_section">
-                    <div class="row " style="padding-top: 0px">
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="top_left_cont zoomIn wow animated">
-                                <h2>{{$home->title}}</h2>
-                                <p>{{$home->description}}</p>
-                                <a href="#services" class="read_more2">Read more</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-6">
-                            <img src="{{url('uploads/contents')}}/{{$home->image}}" 
-                            class="zoomIn wow animated" alt="" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Hero_Section-->
-
-    <section id="{{$aboutus->slug}}">
-        <!--Aboutus-->
-        <div class="inner_wrapper">
-            <div class="container">
-                <h2>ABOUT US</h2>
-                <div class="inner_section">
-                    <div class="row">
-                        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
-                            <img src="{{url('uploads/contents')}}/{{$aboutus->image}}" 
-                            class="img-circle delay-03s animated wow zoomIn" alt="">
-                        </div>
-                        <div class=" col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
-                            <div class=" delay-01s animated fadeInDown wow animated">
-                                <h3>{{$aboutus->title}}...</h3><br />
-                                <p>{{$aboutus->description}}</p> <br />
-                            </div>
-                            <div class="work_bottom"> <span>Want to know more..</span>
-                                 <a href="#contactus" class="contact_btn">Contact Us</a> 
-                                </div>
-                        </div>
-
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Aboutus-->
-
-
-    <!--Service-->
-    <section id="{{$services->slug}}">
-        <div class="container">
-            <h2 >Services</h2>
-            <div class="service_wrapper">
-                <div class="row">
-                  <!--Outputting services section -->
-                    @foreach ($services as $service)
-                    <div class="col-lg-3 ">
-                        <div class="service_block">
-                            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa fa-{{$service->icon}}"></i></span> </div>
-                            <h3 class="animated fadeInUp wow">{{$service->title}}</h3>
-                            <p class="animated fadeInDown wow">{!!$service->description!!}</p>
-                        </div>
-                    </div>
-                   
-                    @endforeach
-                  
-                  </div>
-            </div>
-    </section>
-    <!--Service section eds here-->
-
-
-
-
-    <!-- Portfolio -->
-    <section id="{{$portfolio->slug}}" class="content">
-
-        <!-- Container -->
-        <div class="container portfolio_title">
-
-            <!-- Title -->
-            <div class="section-title">
-                <h2>Portfolio</h2>
-            </div>
-            <!--/Title -->
-
-        </div>
-        <!-- Container -->
-
-        <div class="portfolio-top"></div>
-
-        <!-- Portfolio Filters -->
-        <div class="portfolio">
-
-            <div id="filters" class="sixteen columns">
-                <ul class="clearfix">
-                    <li><a id="all" href="#" data-filter="*" class="active">
-                            <h5>All</h5>
-                        </a></li>
-                        @foreach ($portcats as $cats )
-                             <li><a class="" href="#" data-filter=".{{$cats->slug}}">
-                            <h5>{{$cats->title}}</h5>
-                        </a></li>
-                        @endforeach
-                   
-                </ul>
-            </div>
-            <!--/Portfolio Filters -->
-
-            <!-- Portfolio Wrapper -->
-            <div class="isotope fadeInLeft animated wow " style="position: relative; overflow: hidden; height: 480px;" id="portfolio_wrapper">
-                @foreach ($portfolio as $port)
-                <!-- Portfolio Item -->
-                <div style="position: absolute; left: 0px; top: 0px;
-                 transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
-                  width: 337px; opacity: 1;" class="portfolio-item one-four  
-                   {{$port->class}} isotope-item">
-                    <div class="portfolio_img " style="width: 100%;"> <img src="{{url('uploads/portfolios')}}/{{$port->image}}" alt="Portfolio 1"> </div>
-                    <div class="item_overlay">
-                        <div class="item_info">
-                            <h4 class="project_name">{{$port->title}}</h4>
-                        </div>
-                    </div>
-                </div>
-                <!--/Portfolio Item -->
-
+            <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="text-uppercase">
+                    <a href="header">Home</a>
+                </li>
+                 <!--looping through the categories from the categories table using foreach-->
+                @foreach ($cats as $cat)
+                    <li class="text-uppercase"><a href="#{{ $cat->slug }}"
+                            class="">{{ $cat->title }}</a></li>
                 @endforeach
-               
-                
+                <li class="text-uppercase">
+                    <a href="#contactus" >Contact</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <div>
+                <h1>{{$home->title}}</h1>
+                <p>{{$home->description}}</p>
+            <p>
+                <a href="#about" class="btnStyle btn btn-primary">Get Started</a>
+                <a href="#services" class="btnStyle btn btn-primary">Our Services</a>
+            </p>
+            </div>
+            <div class="container">
+                <img src="{{url('uploads/contents')}}/{{$home->image}}" alt="" />
 
             </div>
-            <!--/Portfolio Wrapper -->
-
+            
         </div>
-        <!--/Portfolio Filters -->
-
-        <div class="portfolio_btm"></div>
-
-
-        <div id="project_container">
-            <div class="clear"></div>
-            <div id="project_data"></div>
+        
+    </header>
+    <section class="about">
+        <div class="aboutHeader">
+            <h1>About Us</h1>
+            <p >We believe technology is a powerful force for good and are working to 
+                foster a sustainable future.</p>
+           
         </div>
-
-
+        <div class="container"  id="aboutus">
+            <div>
+                <h2>{{$aboutus->title}}</h2>
+                <p>{{$aboutus->description}}</p>
+            <p>
+                
+            </p>
+            </div>
+            <div class="">          
+                  <img src="{{url('uploads/contents')}}/{{$aboutus->image}}" alt="" />
+            </div>
+            
+        </div>
+        <div class="container">
+            <div style="margin-right: 20px">          
+                <img src="{{url('uploads/contents')}}/{{$aboutUs->image}}" alt="" />
+          </div>
+          
+            <div>
+                <h2>{{$aboutUs->title}}</h2>
+                <p>{{$aboutUs->description}}</p>
+            <p>
+                
+            </p>
+            </div>
+          
+        </div>
+        <div class="container">
+            <div>
+                <h2>{{$aboutUs1->title}}</h2>
+                <p>{{$aboutUs1->description}}</p>
+            <p>
+                
+            </p>
+            </div>
+            <div class="">          
+                  <img src="{{url('uploads/contents')}}/{{$aboutUs1->image}}" alt="" />
+            </div>
+            
+        </div>
+        
     </section>
-    <!--/Portfolio -->
 
-    <section class="page_section" id="{{$clients->slug}}">
-        <!--page_section-->
-        <h2>Clients</h2>
-        <!--page_section-->
+
+    <section class="boxes" id="services">
+        <div class="aboutHeader">
+            <h1>Services</h1>
+            <p>Laudem latine persequeris id sed, 
+                ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+           
+        </div>
+        <div class="container">
+            @foreach ($services as $service)
+            <div class="box">
+                <h2><i class="fa fa-{{$service->icon}}"></i> {{$service->title}}</h2>
+                <p>
+                    {!!$service->description!!}
+                </p>
+            </div>
+           @endforeach
+        </div>
+    </section>
+
+   
+
+    <section class="" id="clients">
+        <!--clients_section-->
+      <div class="aboutHeader">
+        <h2 >Clients</h2>
+      </div>
+       
+   
+        <!--clients_section-->
         <div class="client_logos">
             <!--client_logos-->
             <div class="container">
                 <ul class="fadeInRight animated wow">
                     @foreach($clients->take(4) as $client)
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="{{$client->link}}" Target="_Blank">
                             <img src="{{url('uploads/clients')}}/{{$client->image}}" alt="">
                         </a>
                    </li>
@@ -218,137 +157,129 @@
             </div>
         </div>
     </section>
-    <!--client_logos-->
-
-    <section class="page_section team" id="team">
-        <!--main-section team-start-->
-        <div class="container">
-            <h2>Team</h2>
-            <h6>Lorem ipsum dolor sit amet, consectetur adipiscing.</h6>
-            <div class="team_section clearfix">
-                <div class="team_area">
-                    <div class="team_box wow fadeInDown delay-03s">
-                        <div class="team_box_shadow"><a href="javascript:void(0)"></a></div>
-                        <img src="img/team_pic1.jpg" alt="">
-                        <ul>
-                            <li><a href="javascript:void(0)" class="fa fa-twitter"></a></li>
-                            <li><a href="javascript:void(0)" class="fa fa-facebook"></a></li>
-                            <li><a href="javascript:void(0)" class="fa fa-pinterest"></a></li>
-                            <li><a href="javascript:void(0)" class="fa fa-google-plus"></a></li>
-                        </ul>
-                    </div>
-                    <h3 class="wow fadeInDown delay-03s">Tom Rensed</h3>
-                    <span class="wow fadeInDown delay-03s">Chief Executive Officer</span>
-                    <p class="wow fadeInDown delay-03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
+    <div class="aboutHeader">
+        <h2 >Contact Us</h2>
+      </div>
+    <div class="row" id="contactus">
+        
+           
+        <div class="column">
+            
+                <h2 style="color: #333; text-align:center">
+                    Our Location
+                </h2>
+                  
+                <div>
+                    <!-- Google Map Code -->
+                    <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12
+                    !1m3!1d3798.644356128793!2d31.085626514484268!3d-17.808403980441152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931bad10291bf53%3A0xd52d1e7be5a0e322!2s33%20Princess%20Dr%2C%20Harare!5e0!3m2!1sen!2szw!4v1644931661338!5m2!1sen!2szw"
+                     width="100%" height="440px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <div class="team_area">
-                    <div class="team_box  wow fadeInDown delay-06s">
-                        <div class="team_box_shadow"><a href="javascript:void(0)"></a></div>
-                        <img src="img/team_pic2.jpg" alt="">
-                        <ul>
-                            <li><a href="javascript:void(0)" class="fa fa-twitter"></a></li>
-                            <li><a href="javascript:void(0)" class="fa fa-facebook"></a></li>
-                            <li><a href="javascript:void(0)" class="fa fa-pinterest"></a></li>
-                            <li><a href="javascript:void(0)" class="fa fa-google-plus"></a></li>
-                        </ul>
-                    </div>
-                    <h3 class="wow fadeInDown delay-06s">Kathren Mory</h3>
-                    <span class="wow fadeInDown delay-06s">Vice President</span>
-                    <p class="wow fadeInDown delay-06s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
-                </div>
-                <div class="team_area">
-                    <div class="team_box wow fadeInDown delay-09s">
-                        <div class="team_box_shadow"><a href="javascript:void(0)"></a></div>
-                        <img src="img/team_pic3.jpg" alt="">
-                        <ul>
-                            <li><a href="javascript:void(0)" class="fa fa-twitter"></a></li>
-                            <li><a href="javascript:void(0)" class="fa fa-facebook"></a></li>
-                            <li><a href="javascript:void(0)" class="fa fa-pinterest"></a></li>
-                            <li><a href="javascript:void(0)" class="fa fa-google-plus"></a></li>
-                        </ul>
-                    </div>
-                    <h3 class="wow fadeInDown delay-09s">Lancer Jack</h3>
-                    <span class="wow fadeInDown delay-09s">Senior Manager</span>
-                    <p class="wow fadeInDown delay-09s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
-                </div>
+            
+        </div>
+        <div class="column">
+         
+           <div class="row">
+              <div class="col-md-4">
+               
+                <p><i class="fa fa-map-marker" style="font-size:30px;color:red"></i>{{$setups->address}}</p>
+              </div>
+              <div class="col-md-4">
+           
+                <p><i class="fa fa-envelope" style="font-size:28px"></i>{{$setups->email}}</p>
+              </div>
+              <div class="col-md-4">
+                 
+                <p> 
+                    <i class="fa fa-mobile-phone" style="font-size:35px"></i> 
+                    {{$setups->contact}}</p>
+              </div>
             </div>
-        </div>
-    </section>
-    <!--/Team-->
-    <!--Footer-->
-    <footer class="footer_wrapper" id="contact">
-        <div class="container">
-            <section class="page_section contact" id="contact">
-                <div class="contact_section">
-                    <h2>Contact Us</h2>
-                    <div class="row">
-                        <div class="col-lg-4">
-
-                        </div>
-                        <div class="col-lg-4">
-
-                        </div>
-                        <div class="col-lg-4">
-
-                        </div>
-                    </div>
-                </div>
+              <!--form-->
+              <form action="" method="post">
                 <div class="row">
-                    <div class="col-lg-4 wow fadeInLeft">
-                        <div class="contact_info">
-                            <div class="detail">
-                                <h4>Propertybook</h4>
-                                <p>{{$setups->address}}</p>
-                            </div>
-                            <div class="detail">
-                                <h4>Call Us</h4>
-                                <p>{{$setups->contact}}</p>
-                            </div>
-                            <div class="detail">
-                                <h4>Email us</h4>
-                                <p>{{$setups->email}}</p>
-                            </div>
-                        </div>
-
-
-
-                        <ul class="social_links">
-                            <li class="twitter animated bounceIn wow delay-02s"><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-                            <li class="facebook animated bounceIn wow delay-03s"><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
-                            <li class="pinterest animated bounceIn wow delay-04s"><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
-                            <li class="gplus animated bounceIn wow delay-05s"><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
+                    <div class="col-sm-6">          
+                            <input type="text" name="name" placeholder="Your Name" class="form-control column" style="border-radius: 15px">
                     </div>
-                    <div class="col-lg-8 wow fadeInLeft delay-06s">
-                        <div class="form">
-                            <input class="input-text" type="text" name="" value="Your Name *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-                            <input class="input-text" type="text" name="" value="Your E-mail *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-                            <textarea class="input-text text-area" cols="0" rows="0" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">Your Message *</textarea>
-                            <input class="input-btn" type="submit" value="send message">
-                        </div>
+                    <div class="col-sm-6">
+                        <input type="email" name="email" id="" placeholder="Your Email" class="column form-control" style="border-radius: 15px">
+
+                    </div>
+                    
+                </div>
+              <input type="text" name="subject" placeholder="Subject" id="" class="form-control column" style="border-radius: 15px">
+              <br>
+              <textarea name="" id="" cols="20" rows="5" placeholder="Message" class="column form-control" style="border-radius: 15px"></textarea>
+                <br>
+                <div class="aboutHeader">
+                    <input class="btn btn-primary form-control btnStyle" 
+                    style="min-width: 160px; max-width:160px ; border-radius:25px;"
+                     type="submit" value="Send Message">
+                </div>
+             
+              </form>
+        </div>
+      </div>
+      <footer class="header">
+        <div class="row">
+            <div class="col-sm-4">
+           <h1> <strong>codeStars</strong> </h1>
+           <p>{{$home->description}}</p>
+            </div>
+            
+            <div class="col-sm-2">
+              <strong> USEFUL LINKS</strong>
+              <br> <br>
+              <ul>
+                  <li><a href="#" style="color:#fff">Home</a></li>
+                  <br>
+                  <li><a href="#aboutus" style="color:#fff">About Us</a></li>
+                  <br>
+                  <li><a href="#services" style="color:#fff">Services</a></li>
+                  <br>
+                  <li><a href="#terms" style="color:#fff">Terms of service</a></li>
+                  <br>
+                  <li><a href="#privacypolicy" style="color:#fff">Privacy Policy</a></li>
+              </ul>
+              
+            </div>
+            <div class="col-sm-2">
+               <strong> CONTACT US</strong><br><br>
+               <p>{{$setups->address}}</p><br>
+                <p>{{$setups->contact}}</p><br>
+                <p>{{$setups->email}}</p>
+            </div>
+            <div class="col-sm-4">
+             <strong style="padding-left: 11px; ">   OUR NEWSLETTER</strong>
+               <br>
+               <br>
+               <p style="padding-left: 11px; ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum consequatur tempore voluptates, vitae iure facere officia iste aut quae voluptatibus et veritatis rerum deserunt dolores fugiat iusto soluta cumque doloribus.</p>
+            <form action="" method="post">
+                <div class="row">
+                    <div class="">
+                        <input type="email" name="email2" class="form-control">
+
+                    </div>
+                    <div class="">
+                        <input type="submit" value="Subscribe" class="btn btn-primary">
+
                     </div>
                 </div>
-            </section>
+            </form>
+            
+            </div>
+            
         </div>
-        <div class="container">
-            <div class="footer_bottom"><span>Copyright © {{date('Y')}}, Website by <a href="http://obertmanyasa.herokuapp.com">Wealthy Manyasa</a>. </span> </div>
-        </div>
+       
     </footer>
-
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
-    <script type="text/javascript" src="js/jquery.nav.js"></script>
-    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="js/jquery.isotope.js"></script>
-    <script type="text/javascript" src="js/wow.js"></script>
-    <script type="text/javascript" src="js/custom.js"></script>
-
-    <style>
-        .service_block{
-            margin-bottom:30px;
-                    }
-  </style>
+    
+    <div class="footer">
+        &copy; Copyright <strong>codeStars</strong>. All Rights Reserved
+     </div>
+  
+     </main>
+  
 </body>
 
 </html>

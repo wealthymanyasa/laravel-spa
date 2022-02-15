@@ -22,6 +22,10 @@ class frontController extends Controller
         $aboutus = DB::table('contents')->where('category','aboutus')->first();
            //getting about slug
         $aboutus->slug = DB::table('categories')->where('title','about us')->value('slug');
+             //getting secondary about data
+        $aboutUs = DB::table('contents')->where('category','services')->first();
+            //getting secondary about data
+        $aboutUs1 = DB::table('contents')->where('category','portfolio')->first();
            //getting all services
         $services = DB::table('services')->where('status','on')->get();
            //getting about slug
@@ -43,6 +47,7 @@ class frontController extends Controller
         $teams = DB::table('teams')->where('status','on')->get();
         //getting clients slug
         $teams->slug = DB::table('categories')->where('title','teams')->value('slug');
+
          
          
 //returning view elements
@@ -55,7 +60,9 @@ class frontController extends Controller
     'portfolio' => $portfolio,
     'portcats' => $portcats,
     'clients' => $clients,
-    'teams' => $teams
+    'teams' => $teams,
+    'aboutUs' => $aboutUs,
+    'aboutUs1' => $aboutUs1
  ]);
    
     }
