@@ -8,24 +8,23 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet" href="../../plugins/jqvmap/jqvmap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
-    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
-    
+    <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -169,11 +168,111 @@
             </div>
             <!-- /.sidebar -->
         </aside>
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            @yield('content')
+            <nav class="navbar navbar-expand navbar-white navbar-light">
+                <!-- Left navbar links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="index3.html" class="nav-link">Edit Clients</a>
+                    </li>
+                </ul>
+                <!-- Right navbar links -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Messages Dropdown Menu -->
+        
+                    <!-- Notifications Dropdown Menu -->
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="{{ url('admin') }}" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
+                            <i class="fas fa-th-large"></i>
+                        </a>
+                    </li>
+        
+                </ul>
+            </nav>
+            @if (Session::has('message'))
+            <div class="col-sm-6" >
+                <div class="alert alert-success alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ Session::get('message') }}
+                </div>
+            </div>
+        @endif
+        <section class="row container">
+            <div class="content col-sm-6">
+             
+                <!--form to update the categories -->
+                <form action="{{ url('updateClient')}}/{{$mainData->clid}}" method="post">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="tbl" value="{{ encrypt('clients') }}">
+                    <input type="hidden" name="clid" value="{{ $mainData->clid }}">
+
+
+                    <div class="form-group">
+                        <label for="">Link</label>
+                        <input type="text" name="link" class="form-control" value="{{$mainData->link}}">
+                    </div>
+                           <!--on or off category status-->
+                    <div class="form-group">
+                        <label for="">Status</label>
+                        <select name="status" class="form-control">
+                            <!--on or off status of the category-->
+                            
+                            <option >{{$mainData->status}}</option>
+                            @if($mainData->status == 'off')
+                            <option>On</option>
+                            @else
+                            <option>off</option>
+                            @endif
+                        </select>
+                    </div>
+                    <!--submit category btn-->
+                    <div class="form-group">
+                        <button class="btn btn-success">Update</button>
+                    </div>
+                </form>
+            </div>
+           <!--section to view the categories //-->
+           <div class="col-sm-6 table-responsive">
+               <p  style="text-align: center" ><strong>View All Clients</strong></p>
+               <table class="table table-striped table-hover table-bordered">
+                   <thead >
+                       <tr >
+                           <th>SN</th>
+                           <th>Link</th>
+                           <th>Status</th>
+                           <th>Action</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       @foreach ($data as $key=>$client)
+                       <tr>
+                        <td>{{++$key}}</td>
+                        <td>{{$client->link}}</td>
+                        <td>{{$client->status}}</td>
+                        <td>
+                            <a href="{{url('editclient')}}/{{$client->clid}}" class="btn btn-sm btn-success">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a href="{{url('deleteclient')}}/{{$client->clid}}" class="btn btn-sm btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                           
+                        </td>
+                       </tr>
+                       @endforeach
+                      
+                   </tbody>
+               </table>
+           </div>
+        </section>
             <!-- right col -->
         </div>
         <!-- /.row (main row) -->
@@ -198,39 +297,39 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="{{ url('plugins/jquery/jquery.min.js') }}"></script>
+    <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
-    <script src="{{ url('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script src="../../plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- Bootstrap 4 -->
-    <script src="{{ url('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJS -->
-    <script src="{{ url('plugins/chart.js/Chart.min.js') }}"></script>
+    <script src="../../plugins/chart.js/Chart.min.js"></script>
     <!-- Sparkline -->
-    <script src="{{ url('plugins/sparklines/sparkline.js') }}"></script>
+    <script src="../../plugins/sparklines/sparkline.js"></script>
     <!-- JQVMap -->
-    <script src="{{ url('plugins/jqvmap/jquery.vmap.min.js') }}"></script>
-    <script src="{{ url('plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
+    <script src="../../plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="../../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
     <!-- jQuery Knob Chart -->
-    <script src="{{ url('plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+    <script src="../../plugins/jquery-knob/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
-    <script src="{{ url('plugins/moment/moment.min.js') }}"></script>
-    <script src="{{ url('plugins/daterangepicker/daterangepicker.js') }}"></script>
+    <script src="../../plugins/moment/moment.min.js"></script>
+    <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
     <!-- Tempusdominus Bootstrap 4 -->
-    <script src="{{ url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+    <script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
     <!-- Summernote -->
-    <script src="{{ url('plugins/summernote/summernote-bs4.min.js') }}"></script>
-    <!-- overlaySycrollbars -->
-    <script src="{{ url('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+    <script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="{{ url('dist/js/adminlte.js') }}"></script>
+    <script src="../../dist/js/adminlte.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{ url('dist/js/pages/dashboard.js') }}"></script>
+    <script src="../../dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{ url('dist/js/demo.js') }}"></script>
+    <script src="../../dist/js/demo.js"></script>
 </body>
 
 </html>

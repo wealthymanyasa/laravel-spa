@@ -10,7 +10,7 @@ class frontController extends Controller
     public function __construct()
     {
     }
-    //function to return views
+    //function to return view-data
     public function index()
     {       //variable to get setups
         $setups = DB::table('setups')->first();
@@ -19,11 +19,11 @@ class frontController extends Controller
             //variable to get all home data
         $home = DB::table('contents')->where('category','home')->first();
             //getting all about details
-        $aboutus = DB::table('contents')->where('category','aboutus')->first();
+        $aboutus = DB::table('contents')->where('category','about us')->first();
            //getting about slug
-        $aboutus->slug = DB::table('categories')->where('title','about us')->value('slug');
+        //$aboutus->slug = DB::table('categories')->where('title','about us')->value('slug');
              //getting secondary about data
-        $aboutUs = DB::table('contents')->where('category','services')->first();
+       $aboutUs = DB::table('contents')->where('category','services')->first();
             //getting secondary about data
         $aboutUs1 = DB::table('contents')->where('category','portfolio')->first();
            //getting all services
@@ -66,4 +66,6 @@ class frontController extends Controller
  ]);
    
     }
+
+    /////////////FRONT controller ends here/////////////////////////////
 }

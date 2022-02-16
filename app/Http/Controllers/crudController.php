@@ -47,7 +47,7 @@ public function slug($string){
     $string = preg_replace('/\s+/', '-',$string);
     //replace even numbers
     $string = preg_replace('/[^a-z0-9-]/','-',$string);
-    //controll if there is multiple hyphens from the strg
+    //controll if there are multiple hyphens from the strg
     $string = preg_replace('/-+/', '-', $string);
     //ruturn the strg if it has hyphen at the end
     return rtrim($string, '-');
@@ -69,7 +69,7 @@ public function updateData()
         }
     }
 
-    //if clsoe to check if input has title and create slug based on data
+    //if close to check if input has title and create slug based on data
     if(Request::has('title')){
          $data['slug'] = $this->slug($data['title']);
     }
@@ -91,9 +91,11 @@ public function updateData()
         $name = $image->getClientOriginalName();
         //renaming image
         $newName = date('ymdgis') . $name;
-        //path defination and uploading to folder uploads/table name
+        //path defination and uploading to folder uploads/table-name
         $image->move(public_path() . '/' . 'uploads/' . $tbl, $newName);
         //returning the new image name
         return $newName;
     }
+
+    /////////////CRUD controller ends here/////////////////////////////
 }

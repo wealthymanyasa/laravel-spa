@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" 
+        crossorigin="anonymous" />
+    
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="css/animate.css" rel="stylesheet" type="text/css">
-
     <title>codeStars</title>
 </head>
 
@@ -69,6 +69,9 @@
         </div>
         <div class="container"  id="aboutus">
             <div>
+              @empty($aboutus)
+               <p></p>
+              @else
                 <h2>{{$aboutus->title}}</h2>
                 <p>{{$aboutus->description}}</p>
             <p>
@@ -78,10 +81,16 @@
             <div class="">          
                   <img src="{{url('uploads/contents')}}/{{$aboutus->image}}" alt="" />
             </div>
-            
+               
+            @endempty
+          </div>
+      
         </div>
         <div class="container">
-            <div style="margin-right: 20px">          
+            <div style="margin-right: 20px">    
+                @empty($aboutUs)
+                <p></p>
+               @else      
                 <img src="{{url('uploads/contents')}}/{{$aboutUs->image}}" alt="" />
           </div>
           
@@ -92,10 +101,13 @@
                 
             </p>
             </div>
-          
+            @endempty
         </div>
         <div class="container">
             <div>
+                @empty($aboutUs1)
+                <p></p>
+               @else 
                 <h2>{{$aboutUs1->title}}</h2>
                 <p>{{$aboutUs1->description}}</p>
             <p>
@@ -105,7 +117,7 @@
             <div class="">          
                   <img src="{{url('uploads/contents')}}/{{$aboutUs1->image}}" alt="" />
             </div>
-            
+            @endempty
         </div>
         
     </section>
@@ -130,11 +142,9 @@
         </div>
     </section>
 
-   
-
-    <section class="" id="clients">
+    <section class="clients" id="clients">
         <!--clients_section-->
-      <div class="aboutHeader">
+      <div class="clientsHeader">
         <h2 >Clients</h2>
       </div>
        
@@ -160,7 +170,7 @@
     <div class="aboutHeader">
         <h2 >Contact Us</h2>
       </div>
-    <div class="row" id="contactus">
+    <section class="row" id="contactus">
         
            
         <div class="column">
@@ -174,7 +184,7 @@
                     <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12
                     !1m3!1d3798.644356128793!2d31.085626514484268!3d-17.808403980441152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931bad10291bf53%3A0xd52d1e7be5a0e322!2s33%20Princess%20Dr%2C%20Harare!5e0!3m2!1sen!2szw!4v1644931661338!5m2!1sen!2szw"
-                     width="100%" height="440px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                     width="100%" height="310px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             
         </div>
@@ -220,9 +230,9 @@
              
               </form>
         </div>
-      </div>
+    </section>
       <footer class="header">
-        <div class="row">
+        <div class="row" >
             <div class="col-sm-4">
            <h1> <strong>codeStars</strong> </h1>
            <p>{{$home->description}}</p>
@@ -230,8 +240,8 @@
             
             <div class="col-sm-2">
               <strong> USEFUL LINKS</strong>
-              <br> <br>
-              <ul>
+            
+              <ul class="page-links">
                   <li><a href="#" style="color:#fff">Home</a></li>
                   <br>
                   <li><a href="#aboutus" style="color:#fff">About Us</a></li>
@@ -245,17 +255,19 @@
               
             </div>
             <div class="col-sm-2">
-               <strong> CONTACT US</strong><br><br>
-               <p>{{$setups->address}}</p><br>
+               <strong> CONTACT US</strong>
+               <div class="contact-links">
+                <p>{{$setups->address}}</p><br>
                 <p>{{$setups->contact}}</p><br>
                 <p>{{$setups->email}}</p>
+               </div>
+               
             </div>
             <div class="col-sm-4">
-             <strong style="padding-left: 11px; ">   OUR NEWSLETTER</strong>
-               <br>
-               <br>
-               <p style="padding-left: 11px; ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum consequatur tempore voluptates, vitae iure facere officia iste aut quae voluptatibus et veritatis rerum deserunt dolores fugiat iusto soluta cumque doloribus.</p>
-            <form action="" method="post">
+             <strong>   OUR NEWSLETTER</strong>
+              
+               <p class="news">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum consequatur tempore voluptates, vitae iure facere officia iste aut quae voluptatibus et veritatis rerum deserunt dolores fugiat iusto soluta cumque doloribus.</p>
+            <form action="" method="post" class="form" style=" ">
                 <div class="row">
                     <div class="">
                         <input type="email" name="email2" class="form-control">
@@ -275,11 +287,11 @@
     </footer>
     
     <div class="footer">
-        &copy; Copyright <strong>codeStars</strong>. All Rights Reserved
+        &copy; Copyright<strong>codeStars</strong>. All Rights Reserved
      </div>
   
      </main>
-  
+ 
 </body>
 
 </html>

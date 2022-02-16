@@ -140,7 +140,8 @@ ul {
     justify-content: space-around;
 }
 
-.aboutHeader {
+.aboutHeader,
+.clientsHeader {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -309,74 +310,6 @@ ul {
     margin-right: 10px;
 }
 
-.footer {
-    background: #00428a;
-    line-height: 80px;
-    color: #fff;
-    text-align: center;
-}
-
-
-/*.gallery*/
-
-.gallery {
-    width: 100%;
-    display: block;
-    min-height: 100vh;
-    background-color: #2a2932;
-    padding: 100px 0;
-}
-
-.gallery .gallery-filter {
-    padding: 0 15px;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.gallery .gallery-filter .filter-item {
-    color: #ffffff;
-    font-size: 18px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin: 0 10px;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    line-height: 1.2;
-    transition: all 0.3s ease;
-}
-
-.gallery .gallery-filter .filter-item.active {
-    color: #ff9800;
-    border-color: #ff9800;
-}
-
-.gallery .gallery-item {
-    width: calc(100% / 3);
-    padding: 15px;
-}
-
-.gallery .gallery-item-inner img {
-    width: 100%;
-}
-
-.gallery .gallery-item.show {
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.gallery .gallery-item.hide {
-    display: none;
-}
-
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -425,49 +358,54 @@ ul {
 
 /*contact us section styles*/
 
-.row {
-    display: flex;
-    padding: 30px;
-}
-
 .column {
     flex: 50%;
     padding: 30px;
 }
 
-
-/*responsive*/
-
-@media(max-width: 991px) {
-    .gallery .gallery-item {
-        width: 50%;
-    }
+.form {
+    padding-top: 40px;
+    padding-left: 17px;
 }
 
-@media(max-width: 767px) {
-    .gallery .gallery-item {
-        width: 100%;
-    }
-    .gallery .gallery-filter .filter-item {
-        margin-bottom: 10px;
-    }
+.news,
+.page-links,
+.contact-links {
+    padding-top: 30px;
 }
+
+
+/* footer styles*/
+
+.footer {
+    background: #00428a;
+    line-height: 80px;
+    color: #fff;
+    text-align: center;
+}
+
+
+/***media query for smaller screen sized devices**/
 
 @media (max-width: 768px) {
-    .header .container {
+    .header .container,
+    .section .container {
         flex-direction: column;
-        padding-top: 20px;
+        padding-top: 100px;
         text-align: center;
+        justify-content: spa;
     }
     .header .container img {
         align-content: center;
     }
+    /*contact us section styles*/
     .about .container {
         flex-direction: column;
         padding-top: 20px;
         text-align: center;
     }
-    .aboutHeader {
+    .aboutHeader,
+    .clientsHeader {
         flex-direction: column;
         padding-top: 20px;
         text-align: center;
