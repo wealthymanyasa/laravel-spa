@@ -17,7 +17,7 @@ Create a database with utf8 collation
 Import the sql file in the root directory of this project named database.sql. name your database codestars
 
 ### run the project
- RUN COMMAND php artisan serve in command prompt within the the projects' ,root directory.
+ RUN COMMAND php artisan serve in command prompt within the the projects' root directory.
 
 ### Open the homepage 
 The website runs on default laravel port 8000.
