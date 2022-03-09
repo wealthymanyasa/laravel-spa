@@ -19,13 +19,13 @@ class frontController extends Controller
             //variable to get all home data
         $home = DB::table('contents')->where('category','home')->first();
             //getting all about details
-        $aboutus = DB::table('contents')->where('category','about us')->first();
+        $aboutus = DB::table('contents')->where('category','api-dev')->first();
            //getting about slug
         //$aboutus->slug = DB::table('categories')->where('title','about us')->value('slug');
              //getting secondary about data
-       $aboutUs = DB::table('contents')->where('category','services')->first();
+       $aboutUs = DB::table('contents')->where('category','app-dev')->first();
             //getting secondary about data
-        $aboutUs1 = DB::table('contents')->where('category','portfolio')->first();
+        $aboutUs1 = DB::table('contents')->where('category','web-dev')->first();
            //getting all services
         $services = DB::table('services')->where('status','on')->get();
            //getting about slug

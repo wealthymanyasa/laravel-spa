@@ -3,6 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Roboto";
 }
 
 body {
@@ -68,15 +69,25 @@ ul {
     font-size: 10px;
 }
 
-.navbar a:hover {
-    color: lightblue;
-    padding-right: 25px;
-}
-
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+    tra
 }
 
 .navbar ul {
@@ -92,7 +103,11 @@ ul {
     background-color: #0151cc;
     color: #fff;
     min-height: 400px;
-    padding: 40px;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
 }
 
 .about {

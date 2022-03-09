@@ -24,8 +24,8 @@
                 <!--outputing the image from setups database table stored in public/uploads/setups-->
                 <a href="#home"><img src="{{ url('uploads/setups') }}/{{ $setups->image }}" alt="logo"></a>
             </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
+            <div class="navigation" id="myNavbar">
+            <ul class="menu">
                 <li class="text-uppercase">
                     <a href="header">Home</a>
                 </li>
@@ -126,8 +126,7 @@
     <section class="boxes" id="services">
         <div class="aboutHeader">
             <h1>Services</h1>
-            <p>Laudem latine persequeris id sed, 
-                ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+            <p>To reach the right people at the right time with the right product requires a software development company with experience.</p>
            
         </div>
         <div class="container">
@@ -266,7 +265,11 @@
             <div class="col-sm-4">
              <strong>   OUR NEWSLETTER</strong>
               
-               <p class="news">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum consequatur tempore voluptates, vitae iure facere officia iste aut quae voluptatibus et veritatis rerum deserunt dolores fugiat iusto soluta cumque doloribus.</p>
+               <p class="news">
+                We will email you our customers to update about
+                 our brand's latest products and services. We will also share
+                 valuable industry news or blog posts or inform you about
+                  your discounts and offers.</p>
             <form action="" method="post" class="form" style=" ">
                 <div class="row">
                     <div class="">
