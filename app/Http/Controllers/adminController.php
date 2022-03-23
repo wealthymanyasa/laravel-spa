@@ -123,7 +123,7 @@ public function deletePortfolio($id){
 
 }
 
-/////////////////////CLIENTS///////////
+/////////////////////CLIENTS SECTION///////////
 
  //function to create a new client 
  public function clients(){
